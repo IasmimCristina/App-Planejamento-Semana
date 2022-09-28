@@ -1,6 +1,11 @@
 @import "reset"; // Reset das configurações do browser.
 @import "variables";
 
+body {
+    font-family: $font-principal;
+    font-size: .875rem;
+    font-weight: 700;
 
+}
 
 
