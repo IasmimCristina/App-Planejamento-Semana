@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,7 @@
     <script src="https://kit.fontawesome.com/62c6af1c90.js" crossorigin="anonymous"></script>
 
     <!-- Estilos CSS -->
+    <link rel="stylesheet" href="assets/styles/css/task-setter.css">
     <link rel="stylesheet" href="assets/styles/css/header.css">
     <link rel="stylesheet" href="assets/styles/css/main.css">
 
@@ -35,15 +37,32 @@
         </div>
 
         <div class="date-time-header">
-            <span class="time-header noselect">10:58</span>
-            <span class="date-header noselect"> 27 de setembro de 2022</span>
+            <span class="time-header noselect" id="current-time">10:58</span>
+            <span class="date-header noselect" id="current-date"> exemplo exemplo</span>
         </div>
     </header>
-    <main>
+    <main class="main-container">
+
+        <section class="task-setters">
+            <input type="text" name="atividade">
+
+
+            <div class="task-setters-btns">
+                <button class=" btn-general btn-salvar btn-salvar-task"> <i class="fa-regular fa-plus"></i> Adicionar Atividade</button>
+                
+                
+                <button class="btn-excluir btn-general btn-excluir-task "> <i class="fa-solid fa-minus"></i> Excluir Todos</button>
+            </div>
+
+           
+        </section>
+
 
     </main>
 
-    <script src="assets/JS/showDateTime.js"></script>
+   
 </body>
-
+ <!-- Interações JavaScript -->
+ <script src="assets/JS/showDateTime.js"></script>
+   
 </html>
