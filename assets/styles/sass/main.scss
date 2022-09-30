@@ -5,8 +5,13 @@
 
 //Estilização geral.
 body {
+    background-color: $color-background;
     font-family: $font-principal;
     font-size: .875rem;
     font-weight: 700;
+    &::-webkit-scrollbar {
+        display: none;
+      }
 }
+
 
