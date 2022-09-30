@@ -3,11 +3,11 @@
 //Configuração dos botões gerais
 .btn-general {
   cursor: pointer;
-  font-size: 1.0625rem;
-  width: 11.25rem;
-  height: 40px;
+  font-size: 19px;
+  width: 16rem;
+  height: 45px;
   border-radius: 0.625rem;
-  padding: 10px 12px;
+  padding: 12px 15px;
   border: none;
   font-family: $font-secondary;
   color: $color-white;
@@ -28,7 +28,7 @@
   &-task {
     width: 222px;
     height: 44px;
-    width: 13.875rem;
+    width: 18rem;
   }
 }
 
