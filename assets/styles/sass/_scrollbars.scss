@@ -3,7 +3,7 @@
 //Configuração das scrollbars.
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 15px;
   border-radius: 22px;
 
 }
@@ -14,13 +14,13 @@
   margin-block: .5em;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: darken($color-white, $amount: 5);
   }
 }
 
 ::-webkit-scrollbar-thumb {
   background: $color-scroll;
-  border-radius: 8px; 
+  border-radius: 8px;
 
   &:hover {
     background-color: darken($color-scroll, $amount: 1);
@@ -28,4 +28,18 @@
 
   }
 
+}
+
+.task-time-container {
+  ul {
+    &::-webkit-scrollbar {
+      width: 7.5px;
+      
+    }
+    &::-webkit-scrollbar-track {
+      margin-block:0 ;
+    }
+    
+    
+  }
 }
