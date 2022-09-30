@@ -1,11 +1,10 @@
 @import "variables";
 
+//Configuração das scrollbars.
+
 ::-webkit-scrollbar {
   width: 8px;
   border-radius: 22px;
-
-
-
 
 }
 
@@ -14,7 +13,6 @@
   border-radius: 10px;
   margin-block: .5em;
 
-
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
@@ -22,9 +20,7 @@
 
 ::-webkit-scrollbar-thumb {
   background: $color-scroll;
-  border-radius: 8px;
-  
-
+  border-radius: 8px; 
 
   &:hover {
     background-color: darken($color-scroll, $amount: 1);

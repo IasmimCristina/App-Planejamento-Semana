@@ -1,6 +1,7 @@
 @import "reset"; // Reset das configurações do browser.
 @import "variables"; //Todas as variáveis presentes.
 @import "scrollbars"; //Scrollbars customizadas.
+@import "noselect";
 
 //Estilização geral.
 body {
@@ -9,12 +10,3 @@ body {
     font-weight: 700;
 }
 
-//Retira a seleção de texto do cursor.
-.noselect {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}

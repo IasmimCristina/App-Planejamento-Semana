@@ -1,7 +1,8 @@
+//Constantes:
 const currentDate = document.getElementById('current-date');
 const currentTime = document.getElementById('current-time');
 
-
+//Funções:
 const tempo = setInterval(function time() {
 
   let date = new Date();
