@@ -1,8 +1,72 @@
 @import "variables";
+@import "inputsDropdowns";
 
 .main-container {
-  display: flex;
-  flex-direction: row;
   margin-top: 8rem;
+
+  .task-setters {
+    margin-top: 10rem;
+    padding: 0 15rem;
+
+    display: flex;
+    justify-content: space-around;
+
+    &-btns {
+      width: 500px;
+      display: flex;
+      justify-content: space-around
+    }
+  }
   
+  .task-dropdown-dia-semana {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content-dia-semana {
+    position: absolute;
+    top: 36px;   
+    
+    z-index: 1;
+    list-style: none;
+
+
+    
+    li {
+      width: 210px;
+      background-color: $color-tues;
+     
+      padding: 15px;     
+      cursor: pointer;
+
+      border: 1px solid $color-date-time-task;
+      
+      border-top: none;
+     border-bottom: none;
+
+      color: $color-date-time-task;
+      font-family: $font-secondary;
+
+      &:hover {
+        background-color: $color-date-time-task;
+        color: $color-tues;
+        transition: 0.5s;
+      }
+    }
+    .dropdown-dia-semana-item-domingo {
+      border-bottom: 2px solid $color-date-time-task;
+    }
+  }
+
+  .task-time-container {
+    position: relative;
+    display: inline-block;
+    ul { // Scroll no dropdown por ser muitolongo.
+      background-color: aqua;
+      height: 350px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
+  }
+
 }
