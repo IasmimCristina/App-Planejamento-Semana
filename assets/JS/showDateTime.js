@@ -18,7 +18,7 @@ const tempo = setInterval(function time() {
   currentTime.textContent = tempo;
 })
 
-function ExibirDataExtenso() {
+const dataExtenso = setInterval(function time() {
   //Arrays com os valores necessários.
   let meses = new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
 
@@ -35,9 +35,9 @@ function ExibirDataExtenso() {
   //Data sendo escrita.
   currentDate.textContent = dataExtenso;
 
-}
+})
 
-ExibirDataExtenso();
+
 
 
 
