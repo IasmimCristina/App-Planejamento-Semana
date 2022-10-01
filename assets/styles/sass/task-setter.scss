@@ -1,18 +1,28 @@
 @import "variables";
 @import "inputsDropdowns";
 
-.main-container {  
-  margin: 10rem 5rem 0rem ;
+
+
+.main-container {
+  margin: 0rem 5rem ;
+ 
+ 
   
-  
-  
+  &-content {
+    // position: absolute;
+   padding-top: 2rem;
+  }
+
+
 
   .task-setters {
-    margin-top: 2.5rem;
+    margin-top: 0rem;
     padding: 0 5rem;
-
+    height: 150px;
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
+
 
     &-btns {
       width: 600px;
@@ -20,7 +30,7 @@
       justify-content: space-around
     }
   }
-  
+
   .task-dropdown-dia-semana {
     position: relative;
     display: inline-block;
@@ -28,24 +38,24 @@
 
   .dropdown-content-dia-semana {
     position: absolute;
-    top: 36px;   
-    
+    top: 36px;
+
     z-index: 1;
     list-style: none;
 
 
-    
+
     li {
       width: 210px;
       background-color: $color-tues;
-     
-      padding: 15px;     
+
+      padding: 15px;
       cursor: pointer;
 
       border: 1px solid $color-date-time-task;
-      
+
       border-top: none;
-     border-bottom: none;
+      border-bottom: none;
 
       color: $color-date-time-task;
       font-family: $font-secondary;
@@ -56,6 +66,7 @@
         transition: 0.5s;
       }
     }
+
     .dropdown-dia-semana-item-domingo {
       border-bottom: 2px solid $color-date-time-task;
     }
@@ -64,7 +75,9 @@
   .task-time-container {
     position: relative;
     display: inline-block;
-    ul { // Scroll no dropdown por ser muitolongo.
+
+    ul {
+      // Scroll no dropdown por ser muitolongo.
       background-color: aqua;
       height: 350px;
       overflow-y: scroll;

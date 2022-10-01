@@ -4,14 +4,21 @@
 @import "noselect"; // Noselect geral de algumas partes do código.
 
 //Estilização geral.
-body {
+body { 
+
+    height: 100vh;
     background-color: $color-background;
     font-family: $font-principal;
     font-size: .875rem;
     font-weight: 700;
+    overflow: hidden;    
+
     &::-webkit-scrollbar {
         display: none;
       }
 }
 
+main {
+    height: 100vh;
+  }
 
