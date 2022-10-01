@@ -1,15 +1,7 @@
 @import "variables";
 @import "buttons";
+@import "mixins";
 
-@mixin box-time ($background-color) {
-  background-color: $background-color;
-  padding: 2.5rem 1.5rem;
-  font-family: $font-secondary;
-  font-weight: 400;
-  font-size: 17px;
-  border-radius: 10px;
-   
-}
 
 .task-area-header {
   // background-color: antiquewhite;
@@ -19,6 +11,7 @@
 
   .task-area-time {
     @include box-time($color-white);
+    padding: 2rem .2rem;
     -webkit-box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
@@ -55,4 +48,16 @@
     
   }
 
+}
+
+.task-area-main {
+  background-color: aqua;
+  display: flex;
+  justify-content: space-between;
+  .task-area-task-time {    
+    @include box-time ($color-monday-opacity);
+    margin-left: 1.35rem;
+    margin-top: 1rem;
+
+  }
 }
