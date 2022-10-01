@@ -61,25 +61,25 @@
 
     &::-webkit-scrollbar-track {
       margin-block: 0;
-      background-color: $color-white;
+      background-color: $color-tues;
       border-radius: 10px;
       margin-block: 0em;
 
 
       &:hover {
-        background-color: darken($color-white, $amount: 5);
+        background-color: darken($color-tues, $amount: 5);
       }
     }
 
     &::-webkit-scrollbar-thumb {
-      border: .5px solid $color-white;
+      border: .5px solid $color-add;
 
-      background: $color-scroll;
+      background: $color-white;
       border-radius: 8px;
 
       &:hover {
-        background-color: darken($color-scroll, $amount: 1);
-        background: darkgray;
+        background-color: darken($color-add, $amount: 1);
+        background: darkgreen;
 
       }
 
