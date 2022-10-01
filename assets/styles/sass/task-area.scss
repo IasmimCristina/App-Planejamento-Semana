@@ -1,0 +1,58 @@
+@import "variables";
+@import "buttons";
+
+@mixin box-time ($background-color) {
+  background-color: $background-color;
+  padding: 2.5rem 1.5rem;
+  font-family: $font-secondary;
+  font-weight: 400;
+  font-size: 17px;
+  border-radius: 10px;
+   
+}
+
+.task-area-header {
+  // background-color: antiquewhite;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .task-area-time {
+    @include box-time($color-white);
+    -webkit-box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
+  }
+  .task-area-week {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;    
+    width: 90%;
+    height: 55px;
+    // background-color: aqua;
+
+    .segunda-feira {
+      @include button-week-day($color-monday);
+    }
+    .terca-feira {
+      @include button-week-day($color-tues);
+    }
+    .quarta-feira {
+      @include button-week-day($color-wed);
+    }
+    .quinta-feira {
+      @include button-week-day($color-thurs);
+    }
+    .sexta-feira {
+      @include button-week-day($color-friday);
+    }
+    .sabado {
+      @include button-week-day($color-saturday);
+    }
+    .domingo {
+      @include button-week-day($color-sunday);
+    }
+    
+  }
+
+}

@@ -11,7 +11,10 @@ body {
     font-family: $font-principal;
     font-size: .875rem;
     font-weight: 700;
-    overflow: hidden;    
+    overflow: hidden;  
+    background-image: url(../../images/bola-LogoCompasso\ 1.svg);  
+    background-repeat: no-repeat;  
+    background-position: right bottom; 
 
     &::-webkit-scrollbar {
         display: none;

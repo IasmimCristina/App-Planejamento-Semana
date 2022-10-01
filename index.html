@@ -19,6 +19,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="assets/styles/css/task-area.css">
     <link rel="stylesheet" href="assets/styles/css/task-setter.css">
     <link rel="stylesheet" href="assets/styles/css/header.css">
     <link rel="stylesheet" href="assets/styles/css/main.css">
@@ -54,86 +55,113 @@
                 <section class="task-setters">
                     <input class="task-input task-input-atividade" type="text" name="atividade" placeholder="Atividade">
                     <div class="task-dropdown-dia-semana">
-                        <button class="task-input dropdown-btn-dia-semana">Segunda-feira</button>
-                        <ul class="dropdown-content-dia-semana">
-                            <li class="dropdown-dia-semana-item">Segunda-feira</li>
-                            <li class="dropdown-dia-semana-item">Terça-feira</li>
-                            <li class="dropdown-dia-semana-item">Quarta-feira</li>
-                            <li class="dropdown-dia-semana-item">Quinta-feira</li>
-                            <li class="dropdown-dia-semana-item">Sexta-feira</li>
-                            <li class="dropdown-dia-semana-item">Sábado</li>
-                            <li class="dropdown-dia-semana-item  dropdown-dia-semana-item-domingo">Domingo</li>
-                        </ul>
+                        <input class="task-input dropdown-btn dropdown-btn-dia-semana" placeholder="Segunda-feira"
+                            name="day-of-the-week" list="days-of-the-week"></input>
+                        <datalist id="days-of-the-week" class="dropdown-content dropdown-content-dia-semana">
+                            <option class="dropdown-dia-semana-item" value="Segunda-feira"></option>
+                            <option class="dropdown-dia-semana-item" value="Terça-feira"></option>
+                            <option class="dropdown-dia-semana-item" value="Quarta-feira"></option>
+                            <option class="dropdown-dia-semana-item" value="Quinta-feira"></option>
+                            <option class="dropdown-dia-semana-item" value="Sexta-feira"></option>
+                            <option class="dropdown-dia-semana-item" value="Sábado"></option>
+                            <option class="dropdown-dia-semana-item  dropdown-dia-semana-item-domingo" value="Domingo">
+                                </li>
+                        </datalist>
                     </div>
                     <div class="task-time-container">
-                        <input class="task-input task-input-time" type="text" name="task-time" placeholder="00h12m"
-                            list="task-times" id="">
-                        <ul id="task-times">
+                        <input class="task-input task-input-time" name="task-time" placeholder="00h12m"
+                            list="task-times">
+                        <datalist class="dropdown-content-task-times" id="task-times">
                             <!-- Possibilidades de horários pré-definidos -->
-                            <li class="task-times-item" value="00h00m">00h00m</li>
-                            <li class="task-times-item" value="00h30m">00h30m</li>
-                            <li class="task-times-item" value="01h00m">01h00m</li>
-                            <li class="task-times-item" value="01h30m">01h30m</li>
-                            <li class="task-times-item" value="02h00m">02h00m</li>
-                            <li class="task-times-item" value="02h30m">02h30m</li>
-                            <li class="task-times-item" value="03h00m">03h00m</li>
-                            
-                            <li class="task-times-item" value="03h30m">03h30m</li>
-                            <li class="task-times-item" value="04h00m">04h00m</li>
-                            <li class="task-times-item" value="04h30m">04h30m</li>
-                            <li class="task-times-item" value="05h00m">05h00m</li>
-                            <li class="task-times-item" value="05h30m">05h30m</li>
-                            <li class="task-times-item" value="06h00m">06h00m</li>
-                            <li class="task-times-item" value="06h30m">06h30m</li>
-                            <li class="task-times-item" value="07h00m">07h00m</li>
-                            <li class="task-times-item" value="07h30m">07h30m</li>
-                            <li class="task-times-item" value="08h00m">08h00m</li>
-                            <li class="task-times-item" value="08h30m">08h30m</li>
-                            <li class="task-times-item" value="09h00m">09h00m</li>
-                            <li class="task-times-item" value="09h30m">09h30m</li>
-                            <li class="task-times-item" value="10h00m">10h00m</li>
-                            <li class="task-times-item" value="10h00m">10h00m</li>
-                            <li class="task-times-item" value="10h00m">10h00m</li>
-                            <li class="task-times-item" value="10h30m">10h30m</li>
-                            <li class="task-times-item" value="11h00m">11h00m</li>
-                            <li class="task-times-item" value="11h30m">11h30m</li>
-                            <li class="task-times-item" value="12h00m">12h00m</li>
-                            <li class="task-times-item" value="12h30m">12h30m</li>
-                            <li class="task-times-item" value="13h00m">13h00m</li>
-                            <li class="task-times-item" value="13h30m">13h30m</li>
-                            <li class="task-times-item" value="14h00m">14h00m</li>
-                            <li class="task-times-item" value="14h30m">14h30m</li>
-                            <li class="task-times-item" value="15h00m">15h00m</li>
-                            <li class="task-times-item" value="15h30m">15h30m</li>
-                            <li class="task-times-item" value="16h00m">16h00m</li>
-                            <li class="task-times-item" value="17h00m">17h00m</li>
-                            <li class="task-times-item" value="17h30m">17h30m</li>
-                            <li class="task-times-item" value="18h00m">18h00m</li>
-                            <li class="task-times-item" value="18h30m">18h30m</li>
-                            <li class="task-times-item" value="19h00m">19h00m</li>
-                            <li class="task-times-item" value="19h30m">19h30m</li>
-                            <li class="task-times-item" value="20h00m">20h00m</li>
-                            <li class="task-times-item" value="20h30m">20h30m</li>
-                            <li class="task-times-item" value="21h00m">21h00m</li>
-                            <li class="task-times-item" value="21h30m">21h30m</li>
-                            <li class="task-times-item" value="22h00m">22h00m</li>
-                            <li class="task-times-item" value="22h30m">22h30m</li>
-                            <li class="task-times-item" value="23h00m">23h00m</li>
-                            <li class="task-times-item" value="23h30m">23h30m</li>
-                        </ul>
+                            <option class="task-times-item" value="00h00m">00h00m</option>
+                            <option class="task-times-item" value="00h30m">00h30m</option>
+                            <option class="task-times-item" value="01h00m">01h00m</option>
+                            <option class="task-times-item" value="01h30m">01h30m</option>
+                            <option class="task-times-item" value="02h00m">02h00m</option>
+                            <option class="task-times-item" value="02h30m">02h30m</option>
+                            <option class="task-times-item" value="03h00m">03h00m</option>
+                            <option class="task-times-item" value="03h30m">03h30m</option>
+                            <option class="task-times-item" value="04h00m">04h00m</option>
+                            <option class="task-times-item" value="04h30m">04h30m</option>
+                            <option class="task-times-item" value="05h00m">05h00m</option>
+                            <option class="task-times-item" value="05h30m">05h30m</option>
+                            <option class="task-times-item" value="06h00m">06h00m</option>
+                            <option class="task-times-item" value="06h30m">06h30m</option>
+                            <option class="task-times-item" value="07h00m">07h00m</option>
+                            <option class="task-times-item" value="07h30m">07h30m</option>
+                            <option class="task-times-item" value="08h00m">08h00m</option>
+                            <option class="task-times-item" value="08h30m">08h30m</option>
+                            <option class="task-times-item" value="09h00m">09h00m</option>
+                            <option class="task-times-item" value="09h30m">09h30m</option>
+                            <option class="task-times-item" value="10h00m">10h00m</option>
+                            <option class="task-times-item" value="10h00m">10h00m</option>
+                            <option class="task-times-item" value="10h00m">10h00m</option>
+                            <option class="task-times-item" value="10h30m">10h30m</option>
+                            <option class="task-times-item" value="11h00m">11h00m</option>
+                            <option class="task-times-item" value="11h30m">11h30m</option>
+                            <option class="task-times-item" value="12h00m">12h00m</option>
+                            <option class="task-times-item" value="12h30m">12h30m</option>
+                            <option class="task-times-item" value="13h00m">13h00m</option>
+                            <option class="task-times-item" value="13h30m">13h30m</option>
+                            <option class="task-times-item" value="14h00m">14h00m</option>
+                            <option class="task-times-item" value="14h30m">14h30m</option>
+                            <option class="task-times-item" value="15h00m">15h00m</option>
+                            <option class="task-times-item" value="15h30m">15h30m</option>
+                            <option class="task-times-item" value="16h00m">16h00m</option>
+                            <option class="task-times-item" value="17h00m">17h00m</option>
+                            <option class="task-times-item" value="17h30m">17h30m</option>
+                            <option class="task-times-item" value="18h00m">18h00m</option>
+                            <option class="task-times-item" value="18h30m">18h30m</option>
+                            <option class="task-times-item" value="19h00m">19h00m</option>
+                            <option class="task-times-item" value="19h30m">19h30m</option>
+                            <option class="task-times-item" value="20h00m">20h00m</option>
+                            <option class="task-times-item" value="20h30m">20h30m</option>
+                            <option class="task-times-item" value="21h00m">21h00m</option>
+                            <option class="task-times-item" value="21h30m">21h30m</option>
+                            <option class="task-times-item" value="22h00m">22h00m</option>
+                            <option class="task-times-item" value="22h30m">22h30m</option>
+                            <option class="task-times-item" value="23h00m">23h00m</option>
+                            <option class="task-times-item" value="23h30m">23h30m</option>
+                        </datalist>
                     </div>
                     <div class="task-setters-btns">
                         <button class=" btn-general btn-salvar btn-salvar-task"> <i class="fa-regular fa-plus"></i>
                             Adicionar
                             Atividade</button>
-                        <button class="btn-excluir btn-general btn-excluir-task "> <i class="fa-solid fa-minus"></i> Excluir
+                        <button class="btn-excluir btn-general btn-excluir-task "> <i class="fa-solid fa-minus"></i>
+                            Excluir
                             Todos</button>
                     </div>
                 </section>
-                <section>
-                    <p style="font-size: 150px;"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore illum
-                        odit ipsam sunt aliquam dolores est ratione voluptatem asperiores. Veniam dolor officia nihil in
-                        quas explicabo nulla, doloremque qui possimus.</p>
+                <section class="task-area">
+                    <div class="task-area-header">
+                        <div class="task-area-time noselect">
+                            Horário
+                        </div>          
+                        <div class="task-area-week">
+                            <button class="task-area-week-day segunda-feira">Segunda-feira</button>
+                            <button class="task-area-week-day terca-feira">Terça-feira</button>
+                            <button class="task-area-week-day quarta-feira">Quarta-feira</button>
+                            <button class="task-area-week-day quinta-feira">Quinta-feira</button>
+                            <button class="task-area-week-day sexta-feira">Sexta-feira</button>
+                            <button class="task-area-week-day sabado">Sábado</button>
+                            <button class="task-area-week-day domingo">Domingo</button>
+                        </div>
+                    </div>
+                    <div class="task-area-main">
+                        <div class="task-area-task-time noselect">
+                            10h30m
+                        </div>
+                        <div class="task-area-task-text noselect">
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore illum dolorem modi
+                                iusto quidem corporis minima harum suscipit maxime temporibus reprehenderit illo eum,
+                                laudantium perspiciatis dolore. Numquam officia aperiam iste!
+
+                            </p>
+                            <button>Apagar</button>
+                        </div>
+                    </div>
                 </section>
             </div>
         </div>
