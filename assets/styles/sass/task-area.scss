@@ -4,6 +4,7 @@
 @import"scrollbars";
 
 
+
 .task-area-header {
   // background-color: antiquewhite;
   display: flex;
@@ -26,8 +27,11 @@
     height: 55px;
     // background-color: aqua;
 
+    
+
     .segunda-feira {
       @include button-week-day($color-monday);
+      
     }
 
     .terca-feira {
@@ -54,6 +58,16 @@
       @include button-week-day($color-sunday);
     }
 
+    .checked-day {
+      // background-color: darken($color-button-week, 25%);
+      height: 65px;
+      border: 5px solid $color-white;
+      border-bottom: none;
+      border-left: none;      
+      border-right: none;
+      
+    }
+
   }
 
 }
@@ -69,7 +83,7 @@
 //Div criada somente para adicionar o scroll.
 .horizontal-scroll {
   margin-top: .5rem;
-  
+
   transform: rotateX(180deg);
   overflow-x: scroll;
 
@@ -166,6 +180,16 @@
 
   .conflict-container {
     // display: none;
+    position: relative;
+  }
+
+  .conflict-arrow {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    bottom: 0;
+
   }
 
   .time-conflict {
