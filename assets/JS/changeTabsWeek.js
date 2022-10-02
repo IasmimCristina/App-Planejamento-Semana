@@ -43,7 +43,7 @@ function TabNavigation() {
     const target = event.currentTarget
     showCurrentTabs(target.dataset.id)
 
-    target.className += " checked-day"
+    target.className += " checked-day" //Sinalização da aba aberta.
   }
 
   function listenerForChanges() {
