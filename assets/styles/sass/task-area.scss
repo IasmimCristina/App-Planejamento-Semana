@@ -87,6 +87,30 @@
   transform: rotateX(180deg);
   overflow-x: scroll;
 
+  //Leve animação para que as tasks apareçam suavemente.
+  .all-tasks-days {
+    section {
+      .task-area-task {
+        animation: up 1s;
+      }
+
+    }
+  }
+
+  @keyframes up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      transform: translateX(30px);
+
+     
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
 }
 
 .task-area-main {
@@ -102,10 +126,12 @@
   // }
 
   //Talvez desnecessário?
-  &-tues, &-wed, &-thurs, &-friday, &-saturday, &-sunday{
-    
-    
-  }
+  &-tues,
+  &-wed,
+  &-thurs,
+  &-friday,
+  &-saturday,
+  &-sunday {}
 
   .task-area-task {
     // transform: rotateX(180deg);

@@ -140,20 +140,20 @@
                             <span>Horário</span>
                         </div>
                         <div class="task-area-week">
-                            <button class="task-area-week-day checked-day segunda-feira">Segunda-feira</button>
-                            <button class="task-area-week-day terca-feira ">Terça-feira</button>
-                            <button class="task-area-week-day quarta-feira">Quarta-feira</button>
-                            <button class="task-area-week-day quinta-feira">Quinta-feira</button>
-                            <button class="task-area-week-day sexta-feira">Sexta-feira</button>
-                            <button class="task-area-week-day sabado">Sábado</button>
-                            <button class="task-area-week-day domingo">Domingo</button>
+                            <button data-id="tab-monday" class="task-area-week-day  segunda-feira">Segunda-feira</button>
+                            <button data-id="tab-tues" class="task-area-week-day terca-feira ">Terça-feira</button>
+                            <button data-id="tab-wed" class="task-area-week-day quarta-feira">Quarta-feira</button>
+                            <button data-id="tab-thurs" class="task-area-week-day quinta-feira">Quinta-feira</button>
+                            <button data-id="tab-friday" class="task-area-week-day sexta-feira">Sexta-feira</button>
+                            <button data-id="tab-saturday" class="task-area-week-day sabado">Sábado</button>
+                            <button data-id="tab-sunday" class="task-area-week-day domingo">Domingo</button>
                         </div>
                     </div>
 
                     <div class="horizontal-scroll">
                         <div class="all-tasks-days">
                             <!-- Segunda-feira -->
-                            <div class="task-area-main task-area-main-monday">
+                            <section  id="tab-monday" class="task-area-main task-area-main-monday">
 
                                 <div class="task-area-task task-area-task-monday">
                                     <div class="task-wrapper">
@@ -212,8 +212,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                
-                                <div class="task-area-task task-area-task-monday conflict-container"> <!--No conflict container que ocorrerá a imagem. E outra task-wrapper como conflito dentro da task area task, ou conflict container-->
+
+                                <div class="task-area-task task-area-task-monday conflict-container">
+                                    <!--No conflict container que ocorrerá a imagem. E outra task-wrapper como conflito dentro da task area task, ou conflict container-->
                                     <img class="conflict-arrow conflict-arrow-none"
                                         src="assets/images/conflict_arrow.svg"
                                         alt="Seta que indica conflito de horário.">
@@ -279,9 +280,9 @@
 
 
 
-                            </div>
+                            </section>
                             <!-- Terça-feira -->
-                            <div class="task-area-main task-area-main-tues">
+                            <section id="tab-tues" class="task-area-main task-area-main-tues">
 
                                 <div class="task-area-task task-area-task-tues">
                                     <div class="task-wrapper">
@@ -346,7 +347,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="task-area-task task-area-task-tues conflict-container">
                                     <img class="conflict-arrow conflict-arrow-none"
                                         src="assets/images/conflict_arrow.svg"
@@ -419,9 +420,9 @@
 
 
 
-                            </div>
+                            </section>
                             <!-- Quarta-feira -->
-                            <div class="task-area-main task-area-main-wed">
+                            <section id="tab-wed" class="task-area-main task-area-main-wed">
 
                                 <div class="task-area-task task-area-task-wed">
                                     <div class="task-wrapper">
@@ -491,9 +492,9 @@
 
 
 
-                            </div>
+                            </section>
                             <!-- Quinta-feira -->
-                            <div class="task-area-main task-area-main-thurs">
+                            <section id="tab-thurs" class="task-area-main task-area-main-thurs">
 
                                 <div class="task-area-task task-area-task-thurs">
                                     <div class="task-wrapper">
@@ -563,9 +564,9 @@
 
 
 
-                            </div>
+                            </section>
                             <!-- Sexta-feira -->
-                            <div class="task-area-main task-area-main-friday">
+                            <section id="tab-friday" class="task-area-main task-area-main-friday">
 
                                 <div class="task-area-task task-area-task-friday">
                                     <div class="task-wrapper">
@@ -635,9 +636,9 @@
 
 
 
-                            </div>
+                            </section>
                             <!-- Sábado -->
-                            <div class="task-area-main task-area-main-saturday">
+                            <section  id="tab-saturday" class="task-area-main task-area-main-saturday">
 
                                 <div class="task-area-task task-area-task-saturday">
                                     <div class="task-wrapper">
@@ -707,9 +708,9 @@
 
 
 
-                            </div>
+                            </section>
                             <!-- Domingo -->
-                            <div class="task-area-main task-area-main-sunday">
+                            <section id="tab-sunday" class="task-area-main task-area-main-sunday">
 
                                 <div class="task-area-task task-area-task-sunday">
                                     <div class="task-wrapper">
@@ -779,7 +780,7 @@
 
 
 
-                            </div>
+                            </section>
                         </div>
 
                     </div>
@@ -806,6 +807,7 @@
 </body>
 <!-- Interações JavaScript -->
 <script src="assets/JS/showDateTime.js"></script>
+<script src="assets/JS/changeTabsWeek.js"></script>
 <script src="assets/JS/takingTask.js"></script>
 <!-- BootStrap - JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
