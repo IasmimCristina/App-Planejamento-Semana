@@ -1,15 +1,12 @@
-// task-area-week || all-tasks-days
 
 
 //Uso da ideia do JQuery.
 const $ = document.querySelector.bind(document);
 //-------
 
-
-
 //Funções para criar a navegação das tabs.
 
-function TabNavigation() {
+// function TabNavigation() {
   //Conteúdo html sendo pêgo.
   const html = {
     links: [...$('.task-area-week').children],
@@ -25,39 +22,42 @@ function TabNavigation() {
   }
 
 
-  function removeAllActiveClasses() {
-    html.links.forEach(section => {
-      section.className = section.className.replace(" checked-day", "")
-    })
-  }
+  // function removeAllActiveClasses() {
+  //   html.links.forEach(button => {
+  //     button.className = button.className.replace(" checked-day", "")
+  //   })
+  // }
 
-  function showCurrentTabs(id) {
-    const tabContent = $('#' + id)
-    tabContent.style.display = "block";
+  // function showCurrentTabs(id) {
+  //   const tabContent = $('#' + id)
+  //   tabContent.style.display = "block";
+  //   tabContent.className += " checkedTab"
+  //    const idActiveTab = id;
+  //   // console.log(idActiveTab); //Ela pode ser pêga?
+    
+  // }
 
-  }
+  // function selectTab(event) {
+  //   hideAllTabsContent()
+  //   removeAllActiveClasses()
+  //   const target = event.currentTarget
+  //   showCurrentTabs(target.dataset.id)
 
-  function selectTab(event) {
-    hideAllTabsContent()
-    removeAllActiveClasses()
-    const target = event.currentTarget
-    showCurrentTabs(target.dataset.id)
+  //   target.className += " checked-day" //Sinalização da aba aberta.
+  // }
 
-    target.className += " checked-day" //Sinalização da aba aberta.
-  }
-
-  function listenerForChanges() {
-    html.links.forEach(button => {
-      button.addEventListener("click", selectTab)
-    }
-    )
-  }
+  // function listenerForChanges() {
+  //   html.links.forEach(button => {
+  //     button.addEventListener("click", selectTab)
+  //   }
+  //   )
+  // }
 
 
 
-  function init() {
-    hideAllTabsContent();
-    listenerForChanges();
+  // function init() {
+  //   hideAllTabsContent();
+  //   listenerForChanges();
     let date = new Date();
     dayWeek = date.getDay();
 
@@ -69,19 +69,35 @@ function TabNavigation() {
       dayWeek -= 1
     }
     // A aba do dia de semana atual aparecerá.
-    html.links[dayWeek].click();
+    currentDay = html.links[dayWeek];
+    currentDay.className += " checked-day" //Sinalização da aba aberta.;
 
-  }
+     
+     console.log(currentDay);
+     
+     hideAllTabsContent();
+    const tabContentId = currentDay.dataset.id;
+    console.log(tabContentId);
+  const tabContent = $('#' + tabContentId)
+    tabContent.style.display = "block";
+    tabContent.className += " checkedTab"
+  //    const idActiveTab = id;
+  //   // console.log(idActiveTab); //Ela pode ser pêga?
+    
 
-  return {
-    init
-  }
-}
+//   }
 
-window.addEventListener('load', () => {
-  const tabNavigation = TabNavigation()
-  tabNavigation.init()
-})
+//   return {
+//     init
+//   }
+// }
+
+
+
+// window.addEventListener('load', () => {
+//   const tabNavigation = TabNavigation()
+//   tabNavigation.init()
+// })
 
 
 // console.log(html.links) 
