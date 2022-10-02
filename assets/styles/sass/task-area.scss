@@ -27,11 +27,11 @@
     height: 55px;
     // background-color: aqua;
 
-    
+
 
     .segunda-feira {
       @include button-week-day($color-monday);
-      
+
     }
 
     .terca-feira {
@@ -63,9 +63,9 @@
       height: 65px;
       border: 5px solid $color-white;
       border-bottom: none;
-      border-left: none;      
+      border-left: none;
       border-right: none;
-      
+
     }
 
   }
@@ -97,7 +97,15 @@
   transform: rotateX(180deg);
   // width: 2000px;
 
+  // &-monday {
+  //   display: none;
+  // }
 
+  //Talvez desnecessário?
+  &-tues, &-wed, &-thurs, &-friday, &-saturday, &-sunday{
+    
+    
+  }
 
   .task-area-task {
     // transform: rotateX(180deg);
