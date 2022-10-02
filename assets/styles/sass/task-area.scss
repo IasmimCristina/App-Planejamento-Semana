@@ -1,6 +1,7 @@
 @import "variables";
 @import "buttons";
 @import "mixins";
+@import"scrollbars";
 
 
 .task-area-header {
@@ -11,15 +12,16 @@
 
   .task-area-time {
     @include box-time($color-white);
-    padding: 2rem .2rem;
+    height: 100px;
     -webkit-box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 5px 30px -22px rgba(0, 0, 0, 0.75);
   }
+
   .task-area-week {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;    
+    align-items: flex-end;
     width: 90%;
     height: 55px;
     // background-color: aqua;
@@ -27,37 +29,153 @@
     .segunda-feira {
       @include button-week-day($color-monday);
     }
+
     .terca-feira {
       @include button-week-day($color-tues);
     }
+
     .quarta-feira {
       @include button-week-day($color-wed);
     }
+
     .quinta-feira {
       @include button-week-day($color-thurs);
     }
+
     .sexta-feira {
       @include button-week-day($color-friday);
     }
+
     .sabado {
       @include button-week-day($color-saturday);
     }
+
     .domingo {
       @include button-week-day($color-sunday);
     }
-    
+
   }
 
 }
 
-.task-area-main {
-  background-color: aqua;
+//Estilização das tarefas.
+//Configuração geral.
+
+.task-wrapper {
   display: flex;
-  justify-content: space-between;
-  .task-area-task-time {    
-    @include box-time ($color-monday-opacity);
-    margin-left: 1.35rem;
-    margin-top: 1rem;
+
+}
+
+//Div criada somente para adicionar o scroll.
+.horizontal-scroll {
+  margin-top: .5rem;
+  
+  transform: rotateX(180deg);
+  overflow-x: scroll;
+
+}
+
+.task-area-main {
+  // position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  transform: rotateX(180deg);
+  // width: 2000px;
+
+
+
+  .task-area-task {
+    // transform: rotateX(180deg);
+    display: flex;
+    //Aqui dentro estará a outra tarefa!!!
+    // overflow: hidden;
+    // flex-shrink: -1;
 
   }
+
+
+
+
+  .task-area-task-time {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  .task-area-task-text {
+    margin-left: 1rem;
+    margin-top: 1rem;
+  }
+
+  //Específico para cada dia da semana.
+  .task-area-task-time-monday {
+    @include box-time ($color-monday-opacity);
+  }
+
+  .task-area-task-text-monday {
+    @include custom-task($color-monday);
+  }
+
+  .task-area-task-time-tues {
+    @include box-time ($color-tues-opacity);
+  }
+
+  .task-area-task-text-tues {
+    @include custom-task($color-tues);
+  }
+
+  .task-area-task-time-wed {
+    @include box-time ($color-wed-opacity);
+  }
+
+  .task-area-task-text-wed {
+    @include custom-task($color-wed);
+  }
+
+  .task-area-task-time-thurs {
+    @include box-time ($color-thurs-opacity);
+  }
+
+  .task-area-task-text-thurs {
+    @include custom-task($color-thurs);
+  }
+
+  .task-area-task-time-friday {
+    @include box-time ($color-friday-opacity);
+  }
+
+  .task-area-task-text-friday {
+    @include custom-task($color-friday);
+  }
+
+  .task-area-task-time-saturday {
+    @include box-time ($color-saturday-opacity);
+  }
+
+  .task-area-task-text-saturday {
+    @include custom-task($color-saturday);
+  }
+
+  .task-area-task-time-sunday {
+    @include box-time ($color-sunday-opacity);
+  }
+
+  .task-area-task-text-sunday {
+    @include custom-task($color-sunday);
+  }
+
+  .conflict-container {
+    // display: none;
+  }
+
+  .time-conflict {
+    @include box-time ($color-conflict-task-opacity); //Talvez important? 
+  }
+
+  .text-conflict {
+    @include custom-task($color-conflict-task); //Talvez important?
+  }
+
+
+
 }
