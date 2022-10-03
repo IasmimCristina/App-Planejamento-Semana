@@ -1,25 +1,25 @@
 //Bancos usados na aplicação.
-const getBank = () => JSON.parse(localStorage.getItem('taskAreaTaskMonday')) ?? [];
-const setBank = (bank) => localStorage.setItem('taskAreaTaskMonday', JSON.stringify(bank));
+const getBankFriday = () => JSON.parse(localStorage.getItem('taskAreaTaskFriday')) ?? [];
+const setBankFriday = (bankFriday) => localStorage.setItem('taskAreaTaskFriday', JSON.stringify(bankFriday));
 
-//Banco para a vlaidação do conflito: não mais usado.
-const getTimeTasks = () => JSON.parse(localStorage.getItem('timeTasks')) ?? [];
-const setTimeTasks = (timeTasks) => localStorage.setItem('timeTasks', JSON.stringify(timeTasks));
-//Modelo para segunda-feira.
+//Banco para a validação do conflito: não mais usado.
+const getTimeTasksFriday = () => JSON.parse(localStorage.getItem('timeTasksFriday')) ?? [];
+const setTimeTasksFriday = (timeTasksFriday) => localStorage.setItem('timeTasksFriday', JSON.stringify(timeTasksFriday));
+//Modelo para quarta-feira.
 
 const createTask = (time, activity, index) => {
 
   const task = document.createElement('div');
   task.classList.add('task-area-task');
-  task.classList.add('task-area-task-monday');
+  task.classList.add('task-area-task-wed');
 
   task.innerHTML = `
     <div id="container-${index}" data-index = ${index}  class="task-container-complete">
       <div class="task-wrapper">
-        <div class="task-area-task-time task-area-task-time-monday noselect">
+        <div class="task-area-task-time task-area-task-time-friday noselect">
           <span data-index= ${index} >${time}</span>
         </div>
-        <div class="task-area-task-text task-area-task-text-monday noselect">
+        <div class="task-area-task-text task-area-task-text-friday noselect">
           <p>
             ${activity}
           </p>
@@ -30,21 +30,21 @@ const createTask = (time, activity, index) => {
     `
 
   //Adição da task no container correto.
-  document.getElementById('tab-monday').appendChild(task);
+  document.getElementById('tab-friday').appendChild(task);
 
 }
 
 const cleanActivities = () => {
-  const tabMonday = document.getElementById('tab-monday');
-  while (tabMonday.firstChild) {
-    tabMonday.removeChild(tabMonday.lastChild);
+  const tabFriday = document.getElementById('tab-friday');
+  while (tabFriday.firstChild) {
+    tabFriday.removeChild(tabFriday.lastChild);
   }
 }
 
 const updateScreen = () => {
   cleanActivities();
-  const bank = getBank();
-  bank.forEach((task, index) => createTask(task.time, task.task, index));
+  const bankFriday = getBankFriday();
+  bankFriday.forEach((task, index) => createTask(task.time, task.task, index));
 
 }
 
@@ -56,12 +56,12 @@ const insertTask = () => {
   if (timeActivity == '' || textActivity == '') {
     alert('Por favor, preencha os campos necessários para adicionar uma atividade!')
   } else {
-    const bank = getBank();
-    bank.push({ 'time': timeActivity, 'task': textActivity })
-    setBank(bank);
-    const timeTasks = getTimeTasks();
-    timeTasks.push(timeActivity);
-    setTimeTasks(timeTasks);
+    const bankFriday = getBankFriday();
+    bankFriday.push({ 'time': timeActivity, 'task': textActivity })
+    setBankFriday(bankFriday);
+    const timeTasksFriday = getTimeTasksFriday();
+    timeTasksFriday.push(timeActivity);
+    setTimeTasksFriday(timeTasksFriday);
     updateScreen();
     document.getElementById('task-time').value = '';
     document.getElementById('atividade').value = '';
@@ -71,12 +71,12 @@ const insertTask = () => {
 
 
 const removeTask = (index) => {
-  const bank = getBank();
-  bank.splice(index, 1);
-  const timeTasks = getTimeTasks();
-  timeTasks.splice(index, 1);
-  setTimeTasks(timeTasks);
-  setBank(bank);
+  const bankFriday = getBankFriday();
+  bankFriday.splice(index, 1);
+  const timeTasksFriday = getTimeTasksFriday();
+  timeTasksFriday.splice(index, 1);
+  setTimeTasksFriday(timeTasksFriday);
+  setBankFriday(bankFriday);
   updateScreen();
 
 }
@@ -92,12 +92,12 @@ const clickTask = (evento) => {
 
 //Apenas rmeove os itens dentro, mas ela ainda existe.
 const removeAllTasks = () => {
-  const bank = getBank();
-  bank.splice(0, bank.length);
-  const timeTasks = getTimeTasks();
-  timeTasks.splice(0, timeTasks.length);
-  setBank(bank);
-  setTimeTasks(timeTasks);
+  const bankFriday = getBankFriday();
+  bankFriday.splice(0, bankFriday.length);
+  const timeTasksFriday = getTimeTasksFriday();
+  timeTasksFriday.splice(0, timeTasksFriday.length);
+  setBankFriday(bankFriday);
+  setTimeTasksFriday(timeTasksFriday);
   updateScreen();
   document.getElementById('task-time').value = '';
   document.getElementById('atividade').value = '';
@@ -113,7 +113,7 @@ document.getElementById('btn-salvar-storage').addEventListener('click', insertTa
 document.getElementById('task-excluirAtvdd').addEventListener('click', removeAllTasks);
 document.getElementById('btn-excluir-storage').addEventListener('click', removeLocalStorage);
 
-document.getElementById('tab-monday').addEventListener('click', clickTask);
+document.getElementById('tab-friday').addEventListener('click', clickTask);
 
 
 updateScreen();
