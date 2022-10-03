@@ -36,9 +36,9 @@
     </div>
 
     <div class="btns-header">
-      <button class="btn-general btn-salvar">Salvar LocalStorage</button>
+      <button id="btn-salvar-storage" class="btn-general btn-salvar">Salvar LocalStorage</button>
 
-      <button class="btn-general btn-excluir">Excluir LocalStorage</button>
+      <button  id="btn-excluir-storage" class="btn-general btn-excluir">Excluir LocalStorage</button>
     </div>
 
     <div class="date-time-header">
@@ -146,7 +146,7 @@
             <button id="btn-adicionarAtvdd" class=" btn-general btn-salvar btn-salvar-task"> <i class="fa-regular fa-plus"></i>
               Adicionar
               Atividade</button>
-            <button class="btn-excluir btn-general btn-excluir-task "> <i class="fa-solid fa-minus"></i>
+            <button id="task-excluirAtvdd" class="btn-excluir btn-general btn-excluir-task "> <i class="fa-solid fa-minus"></i>
               Excluir
               Todos</button>
           </div>
@@ -233,7 +233,7 @@
                 </div>
 
                 <div class="task-area-task task-area-task-monday conflict-container">
-                  <!--No conflict container que ocorrerá a imagem de conflito. E outra task-wrapper com o conflito dentro da task area task, ou conflict container-->
+                  <!--No conflict container, ocorrerá a imagem de conflito. E outra task-wrapper com o conflito dentro da task area task, ou conflict container-->
                   <img class="conflict-arrow conflict-arrow-none" src="assets/images/conflict_arrow.svg"
                     alt="Seta que indica conflito de horário.">
                   <div class="task-wrapper">
