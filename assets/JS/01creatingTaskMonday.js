@@ -19,21 +19,30 @@
 </div> */
 
 
-let bank = [
+// let bank = [
 
-  { 'time': '11h00m', 'task': 'Estudar html' },
-  { 'time': '11h30m', 'task': 'Estudar html e termina ro projeto' },
-  { 'time': '12h00m', 'task': 'Fazer exercicos html' },
-  { 'time': '12h00m', 'task': 'Fazer exercicos css' },
-  { 'time': '12h00m', 'task': 'Fazer exercicos html' },
-  { 'time': '12h00m', 'task': 'Fazer exercicos JS' }
+//   { 'time': '11h00m', 'task': 'Estudar html' },
+//   { 'time': '11h30m', 'task': 'Estudar html e termina ro projeto' },
+//   { 'time': '12h00m', 'task': 'Fazer exercicos html' },
+//   { 'time': '12h00m', 'task': 'Fazer exercicos css' },
+//   { 'time': '12h00m', 'task': 'Fazer exercicos html' },
+//   { 'time': '12h00m', 'task': 'Fazer exercicos JS' }
 
-];
+// ];
+
+const getBank = () => JSON.parse(localStorage.getItem('taskAreaTask')) ?? [];
+const setBank = (bank) => localStorage.setItem('taskAreaTask', JSON.stringify(bank));
 
 //Modelo para segunda-feira.
 //Talvez essa função possa ter atributos
 //Algo com o dataset dos buttons.
-const createTask = (time, activity, indexTask) => {
+
+const validatingTaskTime = () => {
+  const bank = getBank();
+  bank.forEach(time => console.log(time))
+}
+
+const createTask = (time, activity, index) => {
   const task = document.createElement('div');
   task.classList.add('task-area-task');
   task.classList.add('task-area-task-monday');
@@ -47,7 +56,7 @@ const createTask = (time, activity, indexTask) => {
       <p>
         ${activity}
       </p>
-      <button data-indexTask = ${indexTask}  class="btn-delete-task">Apagar</button>
+      <button  class="btn-delete-task"  data-index = ${index} >Apagar</button>
     </div>
   </div>  
   `
@@ -63,7 +72,8 @@ const cleanActivities = () => {
 
 const updateScreen = () => {
   cleanActivities();
-  bank.forEach((task, indexTask) => createTask(task.time, task.task, indexTask));
+  const bank = getBank();
+  bank.forEach((task, index) => createTask(task.time, task.task, index));
   // createTask('1010', 'tarefaaaaaaaa');
 }
 
@@ -75,7 +85,9 @@ const insertTask = () => {
   if (timeActivity == '' || textActivity == '') {
     alert('Por favor, preencha os campos necessários para adicionar uma atividade!')
   } else {
+    const bank = getBank();
     bank.push({ 'time': timeActivity, 'task': textActivity })
+    setBank(bank);
     updateScreen();
     document.getElementById('task-time').value = '';
     document.getElementById('atividade').value = '';
@@ -83,9 +95,24 @@ const insertTask = () => {
   }
 }
 
+
+const removeTask = (index) => {
+  const bank = getBank();
+  bank.splice(index, 1);
+  setBank(bank);  
+  updateScreen();
+
+}
+
 const clickTask = (evento) => {
   const elemento = evento.target;
-  console.log(elemento);
+  // const elementoTexto = elemento.type;
+  // console.log(elementoTexto);
+  if (elemento.type == "submit") {
+    const index = elemento.dataset.index;
+    // console.log(index);
+    removeTask(index);
+  }
 }
 
 
