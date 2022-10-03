@@ -33,7 +33,7 @@ let bank = [
 //Modelo para segunda-feira.
 //Talvez essa função possa ter atributos
 //Algo com o dataset dos buttons.
-const createTask = (time, activity) => {
+const createTask = (time, activity, indexTask) => {
   const task = document.createElement('div');
   task.classList.add('task-area-task');
   task.classList.add('task-area-task-monday');
@@ -47,7 +47,7 @@ const createTask = (time, activity) => {
       <p>
         ${activity}
       </p>
-      <button class="btn-delete-task">Apagar</button>
+      <button data-indexTask = ${indexTask}  class="btn-delete-task">Apagar</button>
     </div>
   </div>  
   `
@@ -63,8 +63,35 @@ const cleanActivities = () => {
 
 const updateScreen = () => {
   cleanActivities();
-  bank.forEach(task => createTask(task.time, task.task));
+  bank.forEach((task, indexTask) => createTask(task.time, task.task, indexTask));
   // createTask('1010', 'tarefaaaaaaaa');
 }
-updateScreen();
 
+
+//atividade task-time
+const insertTask = () => {
+  var timeActivity = document.getElementById('task-time').value;
+  var textActivity = document.getElementById('atividade').value;
+  if (timeActivity == '' || textActivity == '') {
+    alert('Por favor, preencha os campos necessários para adicionar uma atividade!')
+  } else {
+    bank.push({ 'time': timeActivity, 'task': textActivity })
+    updateScreen();
+    document.getElementById('task-time').value = '';
+    document.getElementById('atividade').value = '';
+
+  }
+}
+
+const clickTask = (evento) => {
+  const elemento = evento.target;
+  console.log(elemento);
+}
+
+
+document.getElementById('btn-adicionarAtvdd').addEventListener('click', insertTask);
+document.getElementById('tab-monday').addEventListener('click', clickTask);
+
+//task-area-main-monday
+
+updateScreen();

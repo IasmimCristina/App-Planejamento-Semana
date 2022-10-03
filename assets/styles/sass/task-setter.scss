@@ -4,16 +4,16 @@
 
 
 .main-container {
-  margin: 0rem 2rem; 
-  
-  
+  margin: 0rem 2rem;
+
+
 
 
   &-content {
     // position: absolute;
     // margin: 5rem;
     padding: 3rem 1.25rem 0rem;
-    
+
   }
 
 
@@ -47,11 +47,25 @@
     z-index: 1;
     list-style: none;
 
-//     &.show {
-// display: block;
-//     }
+    &.show {
+      display: block;
+      animation: up 1s;
+    }
 
-    li {
+    @keyframes up {
+      from {
+        opacity: 0;
+        transform: translateY(2px);        
+         
+      }
+  
+      to {
+        opacity: 1;
+      }
+    }
+
+    a {
+      display: flex;
       width: 210px;
       background-color: $color-tues;
 
@@ -60,6 +74,7 @@
 
       border: 1px solid $color-date-time-task;
 
+      text-decoration: none;
       border-top: none;
       border-bottom: none;
 
@@ -72,7 +87,7 @@
         transition: 0.5s;
       }
 
-      
+
     }
 
     .dropdown-dia-semana-item-domingo {
@@ -106,8 +121,8 @@
         text-align: center;
         width: 90px;
         padding: .8rem;
-        
-        
+
+
 
         &:hover {
           color: $color-tues;
