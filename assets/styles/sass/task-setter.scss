@@ -1,22 +1,14 @@
 @import "variables";
 @import "inputsDropdowns";
 
-
+//Configuradores da escrita da tarefa e saus estilizações.
 
 .main-container {
   margin: 0rem 2rem;
 
-
-
-
   &-content {
-    // position: absolute;
-    // margin: 5rem;
     padding: 3rem 1.25rem 0rem;
-
   }
-
-
 
   .task-setters {
     margin-top: 0rem;
@@ -26,19 +18,16 @@
     justify-content: space-around;
     align-items: flex-start;
 
-
     &-btns {
       width: 600px;
       display: flex;
       justify-content: space-around
     }
   }
-
   .task-dropdown-dia-semana {
     position: relative;
     display: inline-block;
   }
-
   .dropdown-content-dia-semana {
     display: none;
     position: absolute;
@@ -55,10 +44,9 @@
     @keyframes up {
       from {
         opacity: 0;
-        transform: translateY(2px);        
-         
+        transform: translateY(2px);
       }
-  
+
       to {
         opacity: 1;
       }
@@ -87,7 +75,6 @@
         transition: 0.5s;
       }
 
-
     }
 
     .dropdown-dia-semana-item-domingo {
@@ -108,7 +95,7 @@
       border-left: solid 1px $color-date-time-task;
       border-bottom: solid 2px $color-date-time-task;
 
-      // Scroll no dropdown por ser muitolongo.
+
       background-color: $color-tues;
       height: 350px;
       overflow-y: scroll;

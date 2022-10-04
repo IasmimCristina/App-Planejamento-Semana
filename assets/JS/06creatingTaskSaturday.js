@@ -106,6 +106,7 @@ const removeAllTasks = () => {
 const removeLocalStorage = () => {
   localStorage.clear();
   updateScreen();
+  alert('Todas as atividades registradas foram excluídas com sucesso.');
 }
 
 document.getElementById('btn-adicionarAtvdd').addEventListener('click', insertTask);

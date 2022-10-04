@@ -15,6 +15,7 @@
   font-family: $font-secondary;
   color: $color-white;
   text-align: center;
+
   &:hover {
     background-color: $color-saturday;
 
@@ -24,10 +25,12 @@
 //Configuração dos botões "salvar"
 .btn-salvar {
   background-color: $color-add;
+
   &:hover {
     background-color: darken($color-add, $amount: 20);
     transition: 0.5s;
   }
+
   &-task {
     width: 222px;
     height: 44px;
@@ -38,13 +41,15 @@
 //Configuração dos botões "excluir"
 .btn-excluir {
   background-color: $color-delete;
+
   &:hover {
     background-color: darken($color-delete, $amount: 20);
     transition: 0.5s;
   }
+
   &-task {
     width: 180px;
     height: 44px;
-   
+
   }
 }

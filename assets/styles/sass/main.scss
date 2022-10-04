@@ -4,22 +4,19 @@
 @import "noselect"; // Noselect geral de algumas partes do código.
 
 //Estilização geral.
-body { 
+body {
 
-    height: 100vh;
-    background-color: $color-background;
-    font-family: $font-principal;
-    font-size: .875rem;
-    font-weight: 700;
-    overflow: hidden;  
-    background-image: url(../../images/bola-LogoCompasso\ 1.svg);  
-    background-repeat: no-repeat;  
-    background-position: right bottom; 
+  height: 100vh;
+  background-color: $color-background;
+  font-family: $font-principal;
+  font-size: .875rem;
+  font-weight: 700;
+  overflow: hidden;
+  background-image: url(../../images/bola-LogoCompasso\ 1.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
 
-    &::-webkit-scrollbar {
-        display: none;
-      }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
-
-
-

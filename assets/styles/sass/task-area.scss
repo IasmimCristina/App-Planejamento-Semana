@@ -27,7 +27,7 @@
     height: 55px;
     // background-color: aqua;
 
-    
+
 
     .segunda-feira {
       @include button-week-day($color-monday);
@@ -60,7 +60,7 @@
 
     .checked-day {
       // background-color: darken($color-button-week, 25%);
-      height:65px;
+      height: 65px;
       border: 5px solid $color-white;
       border-bottom: none;
       border-left: none;
@@ -82,7 +82,7 @@
 
 .task-container-complete {
   display: flex;
-  
+
 }
 
 //Div criada somente para adicionar o scroll.
@@ -108,7 +108,7 @@
       transform: translateY(20px);
       transform: translateX(30px);
 
-     
+
     }
 
     to {
@@ -119,31 +119,16 @@
 }
 
 .task-area-main {
-  // position: absolute;
+
   display: flex;
   flex-direction: column;
 
   transform: rotateX(180deg);
-  // width: 2000px;
 
-  // &-monday {
-  //   display: none;
-  // }
 
-  //Talvez desnecessário?
-  &-tues,
-  &-wed,
-  &-thurs,
-  &-friday,
-  &-saturday,
-  &-sunday {}
 
   .task-area-task {
-    // transform: rotateX(180deg);
     display: flex;
-    //Aqui dentro estará a outra tarefa!!!
-    // overflow: hidden;
-    // flex-shrink: -1;
 
   }
 
@@ -217,8 +202,8 @@
     @include custom-task($color-sunday);
   }
 
+  //Estilização do conflito.
   .conflict-container {
-    // display: none;
     position: relative;
   }
 
@@ -232,11 +217,11 @@
   }
 
   .time-conflict {
-    @include box-time ($color-conflict-task-opacity); //Talvez important? 
+    @include box-time ($color-conflict-task-opacity);
   }
 
   .text-conflict {
-    @include custom-task($color-conflict-task); //Talvez important?
+    @include custom-task($color-conflict-task);
   }
 
 
