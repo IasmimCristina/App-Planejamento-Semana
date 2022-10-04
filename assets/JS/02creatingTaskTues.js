@@ -74,9 +74,9 @@ const removeTask = (index) => {
   const bankTues = getBankTues();
   bankTues.splice(index, 1);
   const timeTasksTues = getTimeTasksTues();
-  timeTasks.splice(index, 1);
+  timeTasksTues.splice(index, 1);
   setTimeTasksTues(timeTasksTues);
-  setBankTueTuess(bankTues);
+  setBankTues(bankTues);
   updateScreen();
 
 }
